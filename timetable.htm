@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        table {
+            width: 95%;
+            max-width: 12000px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            border-width: 10px;
+            border-color: rgb(0, 108, 30);
+        }
+
+        th {
+            
+            font-family: 'Arial', sans-serif;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(0, 98, 28);
+
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #ddd;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(88, 88, 88);
+        }
+
+        td[colspan] {
+            background-color: #f0f4f7;
+            font-weight: bold;
+        }
+
+        
+
+    
+        td[rowspan='5'] {
+            background-color: #ffc107;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            text-align: center;
+            transform: rotate(180deg);
+            letter-spacing: 25px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 10px 5px;
+            }
+
+            th {
+                font-size: 1rem;
+            }
+
+            td[rowspan='5'] {
+                font-size: 1rem;
+            }
+        }
+
+        
+    
+
+        
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th rowspan="2">Time/Day</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th rowspan="2  ">(1:10-2:00)</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>(08:50-09:40)</th>
+                <th>(9:40-10:30)</th>
+                <th>(10:40-11:30)</th>
+                <th>(11:30-12:20)</th>
+                <th>(12:20-1:10)</th>
+                
+                <th>(2:00-2:50)</th>
+                <th>(2:50-3:40)</th>
+                <th>(3:40-4:30)</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td colspan='2'>BCS 501 {BK}<br>BH-210</td>
+                <td>BCS 502 {SYA}<br>BH-210</td>
+                <td>BCS 503 {SS}<br>BH-210</td>
+                <td>BCS055 {AKD}<br>BH-210</td>
+                <td rowspan='5'>LUNCH</td>
+                <td colspan='2'>FSD {PT}<br>BH-210</td>
+                <td>SS-MB<br>BH-210</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td colspan='2'>QA/LR {UB}<br>BH-210</td>
+                <td>BCS 501 {BK}<br>BH-210</td>
+                <td>BCS 503 {SS}<br>BH-210</td>
+                <td>BCS052 {AKD}-RJ-306<br>BCS054 Batch1: {BK}-BH-210<br>Batch 2: {KA/JA}-BH-107</td>
+                <td colspan='3'>DSA<br>SH-1 KC Block Ground Floor</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td colspan='2'>BCS 503 {SS}<br>BH-210</td>
+                <td>BCS 501 {BK}<br>BH-210</td>
+                <td colspan='2'>Domain Training<br>AIML Batch 1-AKD (BH-107)<br>Batch 2-SA (BH-110)<br>Data Science - AA (BH-210)<br>AWS Cloud - SG (RJ-306)</td>
+                <td>BCS055 {AKD}<br>BH-210</td>
+                <td colspan="2">BCS552- B1{SYA} <br>Comp Lab 22 (AB-LG-02C)<br>BCS553-B2 {SS}<br>Comp Lab 23 (AB-LG-02D)</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td colspan='2'>BCS 502 {SYA}<br>BH-210</td>
+                <td>BCS052 {AKD}-RJ-306<br>BCS054 Batch1: {BK}-<br>BH-210 Batch 2: {KA/JA}-BH-107</td>
+                <td colspan='2'>FSD {PT}<br>BH-210</td>
+                <td>VA {LD}<br>BH-210</td>
+                <td colspan="2">BCS553-B1 {SS} <br>Comp Lab 20 (AB-LG-02A)/<br>BCS551-B2 {BK}<br>Comp Lab 21 (AB-LG-02B)</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td colspan='3'>DSA<br>SH-1 KC Block Ground Floor</td>
+                <td>BCS 502{SYA} <br>BH-108</td>
+                <td>BCS052 {AKD}-RJ-306 <br>BCS054 Batch1: {BK}-BH-210<br>Batch 2: {KA/JA}-BH-108</td>
+                <td>BCS055{AKD} <br>BH-109</td>
+                <td colspan="2">BCS551- B1{BK} <br>Comp Lab 20 (AB-LG-02A)/<br>BCS552-B2 {SYA}<br>Comp Lab 21 (AB-LG-02B)</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
