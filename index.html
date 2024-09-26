@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        td[colspan="2"] {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .sidebar {
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 20px;
+            height: 100%;
+        }
+        .iframe-container {
+            text-align: center;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td colspan="2">Header</td>
+            </tr>
+            <tr>
+                <td class="sidebar">
+                    <a href="login.html" target="myframe">Login</a><br><br>
+                    <a href="registration.html" target="myframe">Register</a>
+                </td>
+                <td class="iframe-container">
+                    <iframe name="myframe" width="700" height="600" src="images/photo.png" frameborder="0" style="background-color:aquamarine;"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="footer">Footer</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
