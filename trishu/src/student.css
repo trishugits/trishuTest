@@ -1,0 +1,11 @@
+.icard {
+    background-color: cadetblue;
+    height: 300px;
+    border: 10px solid red;
+    width: 250px;
+    margin: 50px;
+    text-align: center; /* Centers text and content */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+    padding: 10px; /* Adds padding inside the card */
+}
