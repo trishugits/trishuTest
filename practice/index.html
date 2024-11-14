@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Light Bulb Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      background-color: purple;
+      width: 70%;
+      border: 5px solid red;
+      height: 15cm;
+    }
+
+    .bulb-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bulb {
+      width: 200px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    #startBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .bulbs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World</h1>
+
+  <div class="container">
+    <button id="startBtn">Start</button>
+    <div class="bulbs" id="bulbContainer"></div>
+  </div>
+
+  <script>
+    function loadImage(isOn) {
+      return new Promise(resolve => {
+      const src = isOn ? 
+        'https://pics.clipartpng.com/midle/Yellow_Light_Bulb_PNG_Clip_Art-2108.png' : 
+        'https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png';
+        resolve(src);
+    });
+}
+
+
+    async function toggleBulb(bulbId, isChecked) {
+      const bulb = document.getElementById(bulbId);
+      const imgSrc = await loadImage(isChecked);
+      bulb.src = imgSrc;
+    }
+
+    function generateBulbs(count) {
+      const bulbContainer = document.getElementById('bulbContainer').innerHTML = '';
+      for (let i = 1; i <= count; i++) {
+        const bulbId = `bulb${i}`;
+        const switchId = `switch${i}`;
+
+        const bulbElement = `
+          <div class="bulb-container">
+            <img id="${bulbId}" class="bulb" src="https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png" alt="Bulb Off">
+            <input type="checkbox" id="${switchId}">
+          </div>
+        `;
+
+        bulbContainer.insertAdjacentHTML('beforeend', bulbElement);
+
+        document.getElementById(switchId).addEventListener('change', async function() {
+          await toggleBulb(bulbId, this.checked);
+        });
+      }
+    }
+
+    document.getElementById('startBtn').addEventListener('click', function() {
+      const numBulbs = parseInt(prompt('How many bulbs do you want?'));
+
+      generateBulbs(numBulbs);
+      this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
