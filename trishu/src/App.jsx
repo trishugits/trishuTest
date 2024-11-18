@@ -1,6 +1,8 @@
 import React from 'react';
 import Student from './Student';
 import './App.css';
+import UseStudentState from './UseStudentState';
+import ImageManipulation from './ImageManipulation';
 
 function App() {
   const students = [
@@ -33,12 +35,28 @@ function App() {
   return (
     <div className="app-container">
       <h1>Hello World</h1>
-      <div className="college-name">ABES Engineering College</div>
+      {/* <div className="college-name">ABES Engineering College</div>
       <div className="card-container">
         {students.map((student, index) => (
           <Student key={index} {...student} />
         ))}
-      </div>
+      </div> */}
+      <div
+        style={{
+          border: '2px solid blue', 
+          padding: '10px', 
+          height: '750px', 
+          width: '550px', 
+          textAlign: 'center',  
+          fontSize: '45px',
+          backgroundColor: 'pink', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          justifyContent: 'center', 
+          alignItems: 'center'
+        }}
+      ><ImageManipulation/></div>
+      
     </div>
   );
 }
