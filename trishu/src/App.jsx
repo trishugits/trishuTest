@@ -3,6 +3,9 @@ import Student from './Student';
 import './App.css';
 import UseStudentState from './UseStudentState';
 import ImageManipulation from './ImageManipulation';
+import MyUseEffect from './MyUseEffect';
+import UseFetchAPI from './UseFetchAPI';
+import Login from './Login';
 
 function App() {
   const students = [
@@ -41,7 +44,7 @@ function App() {
           <Student key={index} {...student} />
         ))}
       </div> */}
-      <div
+      {/* <div
         style={{
           border: '2px solid blue', 
           padding: '10px', 
@@ -55,8 +58,8 @@ function App() {
           justifyContent: 'center', 
           alignItems: 'center'
         }}
-      ><ImageManipulation/></div>
-      
+      ></div> */}
+      <Login/>
     </div>
   );
 }
